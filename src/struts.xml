@@ -10,7 +10,7 @@
     <package name="default" namespace="/" extends="struts-default">
         
     	<interceptors>
-    		<interceptor name="loginInterceptor" class="cn.itcast.shop.interceptor.LoginInterceptor"/>
+    		<interceptor name="loginInterceptor" class="com.business.shop.interceptor.LoginInterceptor"/>
     		
     	</interceptors>
     	

@@ -43,13 +43,13 @@
 		<!-- 配置映射文件 -->
 		<property name="mappingResources">
 			<list>
-				<value>cn/itcast/shop/user/User.hbm.xml</value>
-				<value>cn/itcast/shop/category/Category.hbm.xml</value>
-				<value>cn/itcast/shop/product/Product.hbm.xml</value>
-				<value>cn/itcast/shop/categorysecond/CategorySecond.hbm.xml</value>
-				<value>cn/itcast/shop/order/Order.hbm.xml</value>
-				<value>cn/itcast/shop/order/OrderItem.hbm.xml</value>
-				<value>cn/itcast/shop/adminuser/AdminUser.hbm.xml</value>
+				<value>com/business/shop/user/User.hbm.xml</value>
+				<value>com/business/shop/category/Category.hbm.xml</value>
+				<value>com/business/shop/product/Product.hbm.xml</value>
+				<value>com/business/shop/categorysecond/CategorySecond.hbm.xml</value>
+				<value>com/business/shop/order/Order.hbm.xml</value>
+				<value>com/business/shop/order/OrderItem.hbm.xml</value>
+				<value>com/business/shop/adminuser/AdminUser.hbm.xml</value>
 			</list>
 		</property>
 		
@@ -66,91 +66,91 @@
 	
 	
 	<!-- 配置Action================================== -->
-	<bean id="indexAction" class="cn.itcast.shop.index.IndexAction" scope="prototype">
+	<bean id="indexAction" class="com.business.shop.index.IndexAction" scope="prototype">
 		<property name="categoryService" ref="categoryService"/>
 		<property name="productService" ref="productService"/>
 	</bean>
 
-	<bean id="userAction" class="cn.itcast.shop.user.UserAction" scope="prototype">
+	<bean id="userAction" class="com.business.shop.user.UserAction" scope="prototype">
 		<property name="userService" ref="userService"/>
 	</bean>
 	
-	<bean id="checkImg" class="cn.itcast.shop.user.CheckImgAction" scope="prototype"></bean>
+	<bean id="checkImg" class="com.business.shop.user.CheckImgAction" scope="prototype"></bean>
 	
-	<bean id="productAction" class="cn.itcast.shop.product.ProductAction" scope="prototype">
+	<bean id="productAction" class="com.business.shop.product.ProductAction" scope="prototype">
 		<property name="categoryService" ref="categoryService"/>
 		<property name="productService" ref="productService"/>
 		<property name="categorySecondService" ref="categorySecondService"/>
 	</bean>
 	
-	<bean id="cartAction" class="cn.itcast.shop.cart.CartAction" scope="prototype">
+	<bean id="cartAction" class="com.business.shop.cart.CartAction" scope="prototype">
 		<!-- 注入商品的Service -->
 		<property name="productService" ref="productService"/>
 	</bean>
 	
-	<bean id="orderAction" class="cn.itcast.shop.order.OrderAction" scope="prototype">
+	<bean id="orderAction" class="com.business.shop.order.OrderAction" scope="prototype">
 		<property name="orderService" ref="orderService"/>
 	</bean>
 	
-	<bean id="adminUserAction" class="cn.itcast.shop.adminuser.AdminUserAction"  scope="prototype">
+	<bean id="adminUserAction" class="com.business.shop.adminuser.AdminUserAction"  scope="prototype">
 		<property name="adminUserService" ref="adminUserService"/>
 	</bean>
 	
-	<bean id="categoryAction" class="cn.itcast.shop.category.CategoryAction" scope="prototype">
+	<bean id="categoryAction" class="com.business.shop.category.CategoryAction" scope="prototype">
 		<property name="categoryService" ref="categoryService"/>
 	</bean>
 	
-	<bean id="categorySecondAction" class="cn.itcast.shop.categorysecond.CategorySecondAction" scope="prototype">
+	<bean id="categorySecondAction" class="com.business.shop.categorysecond.CategorySecondAction" scope="prototype">
 		<property name="categorySecondService" ref="categorySecondService"/>
 		<property name="categoryService" ref="categoryService"></property>
 	</bean>
 	
 	<!-- 配置Service================================== -->
-	<bean id="userService" class="cn.itcast.shop.user.UserService">
+	<bean id="userService" class="com.business.shop.user.UserService">
 		<property name="userDao" ref="userDao"/>
 	</bean>
 	
-	<bean id="categoryService" class="cn.itcast.shop.category.CategoryService">
+	<bean id="categoryService" class="com.business.shop.category.CategoryService">
 		<property name="categoryDao" ref="categoryDao"/>
 	</bean>
 	
-	<bean id="productService" class="cn.itcast.shop.product.ProductService">
+	<bean id="productService" class="com.business.shop.product.ProductService">
 		<property name="productDao" ref="productDao"/>
 	</bean>
 	
-	<bean id="orderService" class="cn.itcast.shop.order.OrderService">
+	<bean id="orderService" class="com.business.shop.order.OrderService">
 		<property name="orderDao" ref="orderDao"/>
 	</bean>
 	
-	<bean id="adminUserService" class="cn.itcast.shop.adminuser.AdminUserService">
+	<bean id="adminUserService" class="com.business.shop.adminuser.AdminUserService">
 		<property name="adminUserDao" ref="adminUserDao"/>
 	</bean>
 	
-	<bean id="categorySecondService" class="cn.itcast.shop.categorysecond.CategorySecondService">
+	<bean id="categorySecondService" class="com.business.shop.categorysecond.CategorySecondService">
 		<property name="categorySecondDao" ref="categorySecondDao"/>
 	</bean>
 	<!-- 配置Dao================================== -->
-	<bean id="userDao" class="cn.itcast.shop.user.UserDao">
+	<bean id="userDao" class="com.business.shop.user.UserDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="categoryDao" class="cn.itcast.shop.category.CategoryDao">
+	<bean id="categoryDao" class="com.business.shop.category.CategoryDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="productDao" class="cn.itcast.shop.product.ProductDao">
+	<bean id="productDao" class="com.business.shop.product.ProductDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="orderDao" class="cn.itcast.shop.order.OrderDao">
+	<bean id="orderDao" class="com.business.shop.order.OrderDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="adminUserDao" class="cn.itcast.shop.adminuser.AdminUserDao">
+	<bean id="adminUserDao" class="com.business.shop.adminuser.AdminUserDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="categorySecondDao" class="cn.itcast.shop.categorysecond.CategorySecondDao">
+	<bean id="categorySecondDao" class="com.business.shop.categorysecond.CategorySecondDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 </beans>
