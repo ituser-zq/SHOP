@@ -15,7 +15,7 @@
 	<div class="span5">
 		<div class="logo">
 			<a href="./京华亿家/index.htm">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客"/>
+				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.jpg" alt="金东"/>
 			</a>
 		</div>
 	</div>
